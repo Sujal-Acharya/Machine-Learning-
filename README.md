@@ -39,3 +39,26 @@ B --> C[Exploratory Data Analysis]
 C --> D[Feature Encoding & Scaling]
 D --> E[Model Training & Evaluation]
 E --> F[Result Interpretation & Prescriptive Analysis]
+
+---
+```
+## 📈 Exploratory Data Analysis (EDA)
+
+Exploratory Data Analysis was performed to uncover patterns and relationships between variables that influence churn behavior. The visualizations below helped in understanding customer demographics, product usage, and financial profiles.
+
+### 🔍 Key Findings:
+- **Age vs Churn:** Customers aged **40–60** exhibit the highest churn tendency.
+- **Gender vs Churn:** Female customers show a slightly higher churn rate than males.
+- **Geography vs Churn:** Customers from **Germany** have a notably higher churn rate compared to Spain or France.
+- **Balance vs Churn:** Mid-range balances correlate with higher churn likelihood.
+- **Product Usage:** Customers holding only **one product** are more likely to leave than multi-product customers.
+
+### 🧮 Visualization Samples (using Plotly Express)
+```python
+import plotly.express as px
+
+px.histogram(df, x='Age', color='Exited', barmode='group', title='Age Distribution vs Churn')
+px.box(df, x='Gender', y='Age', color='Exited', title='Gender-wise Churn by Age')
+px.bar(df.groupby('Geography')['Exited'].mean().reset_index(), x='Geography', y='Exited', color='Geography', title='Churn Rate by Country')
+px.scatter(df, x='Balance', y='EstimatedSalary', color='Exited', title='Balance vs Salary and Churn Relationship')
+```
