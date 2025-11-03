@@ -39,3 +39,12 @@ graph TD;
     D --> E[Model Training];
     E --> F[Model Evaluation & Comparison];
     F --> G[Insights & Prescriptive Analysis];
+
+| Model               | Description                                            | Accuracy |
+| ------------------- | ------------------------------------------------------ | -------- |
+| Logistic Regression | Baseline model for binary classification               | 81.2%    |
+| Random Forest       | Ensemble model capturing non-linear relationships      | 85.9%    |
+| XGBoost             | Gradient boosting algorithm providing best performance | 87.3%    |
+| Decision Tree       | Simple interpretable model                             | 82.1%    |
+| KNN                 | Instance-based learning algorithm                      | 80.7%    |
+
