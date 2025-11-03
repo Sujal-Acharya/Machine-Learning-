@@ -41,7 +41,7 @@ D --> E[Model Training & Evaluation]
 E --> F[Result Interpretation & Prescriptive Analysis]
 
 ---
-```
+
 ## 📈 Exploratory Data Analysis (EDA)
 
 Exploratory Data Analysis was performed to uncover patterns and relationships between variables that influence churn behavior. The visualizations below helped in understanding customer demographics, product usage, and financial profiles.
