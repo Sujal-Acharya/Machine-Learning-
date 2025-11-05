@@ -1,50 +1,88 @@
-# 🏦 Bank Customer Churn Prediction
+# 📊 Customer Churn Prediction using Machine Learning
 
 ## 📘 Overview
-Customer churn is a major challenge for financial institutions as retaining existing customers is often more cost-effective than acquiring new ones.  
-This project focuses on **predicting customer churn in a bank** using machine learning techniques. By analyzing customer demographics, account information, and banking activity, the model identifies which customers are most likely to leave the bank, enabling data-driven retention strategies.
+This project aims to **predict customer churn** using Machine Learning techniques. Customer churn refers to when customers stop doing business with a company. By analyzing behavioral and demographic data, this model identifies key factors influencing churn and helps businesses retain valuable customers.
 
 ---
 
-## 📊 Dataset Information
-**Source:** [Kaggle - Bank Churn Modeling](https://www.kaggle.com/datasets/mathchi/churn-for-bank-customers)  
-
-**Dataset Details:**
-- **Rows:** ~10,000 customer records  
-- **Features:** 14 attributes including demographics, account balance, product usage, and activity  
-- **Target Variable:** `Exited` (1 = Customer Churned, 0 = Customer Retained)
-
-**Key Features Used:**
-- `CreditScore`, `Age`, `Gender`, `Tenure`, `Balance`, `NumOfProducts`, `HasCrCard`, `IsActiveMember`, `EstimatedSalary`
-
-**Preprocessing Steps:**
-1. Handled missing values (if any) and removed duplicates  
-2. Label encoded categorical variables (`Gender`, `Geography`)  
-3. Standardized numerical features using `StandardScaler`  
-4. Split dataset into **80% training** and **20% testing**  
+## 🧠 Project Objective
+The main goal of this project is to build a predictive model that:
+- Analyzes customer data to detect patterns related to churn.
+- Predicts whether a customer will churn or stay.
+- Provides data-driven insights to improve customer retention.
 
 ---
 
-## ⚙️ Methods and Approach
+## 📂 Dataset
+**File:** `churn.csv`  
+The dataset contains various customer attributes such as:
+- `customerID`: Unique customer identifier  
+- `gender`: Male/Female  
+- `SeniorCitizen`: Whether the customer is a senior citizen  
+- `Partner`, `Dependents`: Family-related attributes  
+- `tenure`: Duration with the company  
+- `PhoneService`, `InternetService`: Service-related attributes  
+- `Contract`, `PaymentMethod`: Billing-related details  
+- `MonthlyCharges`, `TotalCharges`: Payment information  
+- `Churn`: Target variable (Yes/No)
 
-### 🔹 Problem Formulation
-The task is a **binary classification** problem — predicting whether a customer will churn (`1`) or not (`0`).  
+---
 
-### 🔹 Workflow
-```mermaid
-graph TD;
-    A[Data Collection] --> B[Data Cleaning & Preprocessing];
-    B --> C[Exploratory Data Analysis];
-    C --> D[Feature Engineering & Selection];
-    D --> E[Model Training];
-    E --> F[Model Evaluation & Comparison];
-    F --> G[Insights & Prescriptive Analysis];
+## ⚙️ Workflow
+1. **Data Loading and Exploration**
+   - Imported necessary libraries like `pandas`, `numpy`, `matplotlib`, `seaborn`, and `plotly`.
+   - Loaded the dataset and explored its structure, missing values, and data types.
 
-| Model               | Description                                            | Accuracy |
-| ------------------- | ------------------------------------------------------ | -------- |
-| Logistic Regression | Baseline model for binary classification               | 81.2%    |
-| Random Forest       | Ensemble model capturing non-linear relationships      | 85.9%    |
-| XGBoost             | Gradient boosting algorithm providing best performance | 87.3%    |
-| Decision Tree       | Simple interpretable model                             | 82.1%    |
-| KNN                 | Instance-based learning algorithm                      | 80.7%    |
+2. **Exploratory Data Analysis (EDA)**
+   - Visualized distributions and relationships using:
+     - Histograms
+     - Correlation heatmaps
+     - Box plots and count plots
+   - Identified patterns and important features contributing to churn.
 
+3. **Data Preprocessing**
+   - Handled missing values and outliers.
+   - Encoded categorical variables using Label Encoding/One-Hot Encoding.
+   - Scaled numerical features for better model performance.
+   - Split the data into training and testing sets.
+
+4. **Model Building**
+   - Trained multiple models including:
+     - Logistic Regression  
+     - Decision Tree Classifier  
+     - Random Forest Classifier  
+     - Support Vector Machine (SVM)
+   - Compared their performance metrics (accuracy, precision, recall, F1-score).
+
+5. **Model Evaluation**
+   - Evaluated models using confusion matrix and classification report.
+   - Visualized model performance through ROC curves and feature importance charts.
+
+6. **Result & Insights**
+   - Identified the most significant predictors of churn.
+   - The best-performing model achieved high accuracy in predicting customer churn.
+   - Insights can be used to design targeted retention campaigns.
+
+---
+
+## 📈 Key Insights
+- Customers with **month-to-month contracts** are more likely to churn.
+- **Higher monthly charges** correlate with increased churn risk.
+- Customers without **online security or tech support** show higher churn tendencies.
+- Long-term customers tend to stay loyal.
+
+---
+
+## 🧩 Technologies Used
+- **Python**
+- **Pandas, NumPy**
+- **Matplotlib, Seaborn, Plotly**
+- **Scikit-learn**
+- **Jupyter Notebook**
+
+---
+
+## 🚀 How to Run the Project
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/Customer-Churn-Prediction.git
