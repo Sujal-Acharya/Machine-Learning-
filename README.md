@@ -109,4 +109,4 @@ The dataset contains various customer-related features including:
 ## 🚀 How to Run the Project
 1. Clone this repository:
    ```bash
-   git clone https://github.com/yourusername/Customer-Churn-Prediction.git
+   [git clone https://github.com/yourusername/Customer-Churn-Prediction.git](https://github.com/Sujal-Acharya/Machine-Learning-.git)
